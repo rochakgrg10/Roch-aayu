@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Lora, sans-serif;
 }
 
 img {
@@ -24,11 +25,33 @@ img {
 .nav-list a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.65);
-  font-family: Lora;
   font-size: 1rem;
 }
-.nav-list a:hover {
-  text-decoration: underline;
+.nav-item {
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  height: 2px;
+  width: 100%;
+  background-color: #2c2d2b;
+  transition: 0.3s;
+  box-shadow: 0 0 3px #f1f8e9;
+}
+
+.nav-item:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-item:hover {
+  text-shadow: 0 0 10px #f1f8e9;
 }
 
 /* style for banner */
